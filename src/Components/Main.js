@@ -25,8 +25,9 @@ const Main=()=>{
 
             <div className='row2'>
 
-                <h4>Find Your Book</h4>
+           
                 <div className='search'>
+                    <img className="google-icon" src="./images/goo.png" alt=""/>
                     <input type='text' placeholder='Enter Your Book Name' value={search} onChange={e=>setSearch(e.target.value)} onKeyUp={searchBook}/>
                     <button className='searchbtn'><img className="searchbtn-icon" src="./images/search.png" alt=""/></button>
 
