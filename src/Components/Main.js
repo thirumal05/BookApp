@@ -5,12 +5,13 @@ import axios from 'axios';
 
 const Main=()=>{
     const[search, setSearch]=useState("");
+    const[bookData, setbookData]=useState([])
     const searchBook =(evt)=>{
 
-
-
-         if(evt.key=="Enter"){
-             console.log("Hello")
+         if(evt.key==="Enter"){
+            axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyAFzixAJyjX23rtBajO52qrNf-El4KbwwY'+'maxResults=40')    
+            .then(res=>setbookData(res.data.items))
+            .catch(err=>console.log(err))         
          }
 
     }
@@ -38,15 +39,11 @@ const Main=()=>{
 
         </div>   
         <div className='container'>
-
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
+        {
+           <Card book={bookData}/>
+        }
+ 
+            
         </div>
 
         </>
