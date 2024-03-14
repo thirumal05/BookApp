@@ -9,7 +9,7 @@ const Main=()=>{
     const searchBook =(evt)=>{
 
          if(evt.key==="Enter"){
-            axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyAFzixAJyjX23rtBajO52qrNf-El4KbwwY'+'maxResults=40')    
+            axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyApIRybKAm8IxVshim9TLjkYurRQoHDtOc'+'&maxResults=40')    
             .then(res=>setbookData(res.data.items))
             .catch(err=>console.log(err))         
          }
@@ -33,7 +33,7 @@ const Main=()=>{
                     <button className='searchbtn'><img className="searchbtn-icon" src="./images/search.png" alt=""/></button>
 
                 </div>
-                <img className='bgimg2' src="./images/bg2.png" alt=""/>
+               
             </div>
 
 
